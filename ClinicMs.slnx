@@ -2,6 +2,8 @@
   <Project Path="ClinicMs.Api/ClinicMs.Api.csproj" />
   <Project Path="ClinicMS.Application/ClinicMS.Application.csproj" />
   <Project Path="ClinicMS.Domain/ClinicMS.Domain.csproj" />
+  <Project Path="ClinicMs.External/ClinicMs.External.csproj" Id="b11dc802-eaf8-4f73-9c3b-181b06753531" />
   <Project Path="ClinicMS.Infrastructure/ClinicMS.Infrastructure.csproj" />
+  <Project Path="ClinicMs.Shared/ClinicMs.Shared.csproj" Id="70b23d39-a024-40c2-b6cf-97afa23ba7b6" />
   <Project Path="ClinicMS.Web/ClinicMS.Web.csproj" />
 </Solution>

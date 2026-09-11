@@ -6,7 +6,6 @@ namespace ClinicMS.Web.ApiClients
 {
   public class HttpService : IHttpService
   {
-
     private static readonly JsonSerializerOptions SerializerOptions = new()
     {
       PropertyNameCaseInsensitive = true
@@ -18,25 +17,25 @@ namespace ClinicMS.Web.ApiClients
     {
       _httpClient = httpClient;
     }
-    public Task<T?> DeleteAsync<T>(string url, CancellationToken cancellationToken = default)
+    public async Task<T?> DeleteAsync<T>(string url, CancellationToken cancellationToken = default)
     {
-      throw new NotImplementedException();
+      return await SendAsync<T>(HttpMethod.Delete, url, null, cancellationToken);
+        }
+
+    public async Task<T?> GetAsync<T>(string url, CancellationToken cancellationToken = default)
+    {
+      return await SendAsync<T>(HttpMethod.Get, url, null, cancellationToken);
+        }
+
+    public async Task<T?> PostAsync<T>(string url, object? Payload, CancellationToken cancellationToken = default)
+    {
+      return await SendAsync<T>(HttpMethod.Post, url, Payload, cancellationToken);
     }
 
-    public Task<T?> GetAsync<T>(string url, CancellationToken cancellationToken = default)
+    public async Task<T?> PutAsync<T>(string url, object? Payload, CancellationToken cancellationToken = default)
     {
-      throw new NotImplementedException();
-    }
-
-    public Task<T?> PostAsync<T>(string url, object? Payload, CancellationToken cancellationToken = default)
-    {
-      throw new NotImplementedException();
-    }
-
-    public Task<T?> PutAsync<T>(string url, object? Payload, CancellationToken cancellationToken = default)
-    {
-      throw new NotImplementedException();
-    }
+      return await SendAsync<T>(HttpMethod.Put, url, Payload, cancellationToken);
+        }
 
     private async Task<T?> SendAsync<T>(HttpMethod Method, string url, Object? Payload, CancellationToken cancellationToken)
     {
