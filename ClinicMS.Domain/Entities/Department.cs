@@ -8,7 +8,7 @@ namespace ClinicMS.Domain.Entities
     public class Department
     {
         [Key]
-        public Guid id { get; set; }
+        public string? Id { get; set; }
 
         [Required]
         [Length(3, 100, ErrorMessage ="{0} must be between {2} and {1} characters.")]

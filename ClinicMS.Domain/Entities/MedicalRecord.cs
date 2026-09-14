@@ -8,8 +8,8 @@ namespace ClinicMS.Domain.Entities
 {
     public class MedicalRecord
     {
-        public Guid Id { get; set; }
-        public Guid AppointmentId { get; set; }
+        public string? Id { get; set; }
+        public string? AppointmentId { get; set; }
 
         public decimal BloodPressure { get; set; }
         public decimal Temperature { get; set; }
@@ -25,6 +25,6 @@ namespace ClinicMS.Domain.Entities
         [Required, NotNull]
         public DateTime CreatedOn { get; set; }
 
-        public Guid CreatedById { get; set; }
+        public string? CreatedById { get; set; }
     }
 }

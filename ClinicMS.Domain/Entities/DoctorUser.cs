@@ -8,11 +8,11 @@ namespace ClinicMS.Domain.Entities
     public class DoctorUser
     {
         [Required]
-        public Guid Id { get; init; }
+        public string? Id { get; init; }
 
         [Required]
         // Foreign key to the ApplicationUser entity
-        public Guid ApplicatioUserId { get; set; }
+        public string? ApplicatioUserId { get; set; }
 
         [Required]
         [Display(Name = "Full Name")]
@@ -21,7 +21,7 @@ namespace ClinicMS.Domain.Entities
 
         [Required]
         // foreign key to the Department entity
-        public Guid DepartmentId { get; set; }
+        public string? DepartmentId { get; set; }
         
         [Required]
         [Display(Name = "Specialization")]

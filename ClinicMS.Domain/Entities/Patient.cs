@@ -7,7 +7,7 @@ namespace ClinicMS.Domain.Entities
     public class Patient
     {
         [Required]
-        public Guid Id { get; init; }
+        public string? Id { get; init; }
 
         public int _Sequence { get; set; }
 

@@ -6,8 +6,8 @@ namespace ClinicMS.Domain.Entities
 {
     public class PrescriptionItem
     {
-        public Guid Id { get; set; }
-        public Guid PrescriptionId { get; set; }
+        public string? Id { get; set; }
+        public string? PrescriptionId { get; set; }
 
         public string MedicationName { get; set; } = string.Empty;
         public string Dosage { get; set; } = string.Empty;

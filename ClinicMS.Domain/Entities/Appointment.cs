@@ -6,7 +6,7 @@ namespace ClinicMS.Domain.Entities
     public class Appointment
     {
         [Required]
-        public Guid Id { get; set; }
+        public string? Id { get; set; }
 
         [Required]
         [Display(Name = "Appointment Number")]
@@ -52,7 +52,7 @@ namespace ClinicMS.Domain.Entities
         public DateTime CreatedOn { get; set; }
         [Required]
         [Display(Name = "Created By")]
-        public Guid CreatedById { get; set; }
+        public string? CreatedById { get; set; }
 
     }
 }
