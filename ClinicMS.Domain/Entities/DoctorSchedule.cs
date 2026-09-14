@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace ClinicMS.Domain.Entities
 {
     public class DoctorSchedule
     {
+    [Key]
+    [Required]
         public string? Id { get; set; }
+    [Required]
         public string? DoctorId { get; set; }
         public DayOfWeek DayOfWeek { get; set; }
         public TimeSpan StartTime { get; set; }

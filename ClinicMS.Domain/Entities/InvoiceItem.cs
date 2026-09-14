@@ -1,9 +1,11 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace ClinicMS.Domain.Entities
 {
     public class InvoiceItem
     {
-        // create a new class called InvoiceItem with the following properties: Id, InvoiceId, Description, Quantity, UnitPrice, LineTotal
+    [Required]
         public string? Id { get; set; }
         public string? InvoiceId { get; set; }
         public string Description { get; set; } = string.Empty;

@@ -12,7 +12,6 @@ namespace ClinicMS.Domain.Entities
 
         [Required]
         [Length(3, 100, ErrorMessage ="{0} must be between {2} and {1} characters.")]
-        [Display(Name = "Department Name")]
         public string Name { get; set; } = string.Empty;
 
         [MaxLength(500, ErrorMessage = "{0} cannot exceed {1} characters.")]
