@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClinicMS.Domain.Entities
 {
-  public class ApplicationRole : IdentityRole
+  public class ApplicationRole : IdentityRole<string>
   {
   }
 }

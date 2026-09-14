@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace ClinicMS.Domain.Entities
 {
-  public class ApplicationUser : IdentityUser
+  public class ApplicationUser : IdentityUser<string>
   {
     //FullName, IsActive, CreatedOn, and nullable LastLogin
     public string FullName { get; set; } = string.Empty;
