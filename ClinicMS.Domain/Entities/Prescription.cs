@@ -11,11 +11,6 @@ namespace ClinicMS.Domain.Entities
     public string? PatientId { get; set; }
     public DateTime IssuedOn { get; set; }
     public string Notes { get; set; } = string.Empty;
-    public ICollection<PrescriptionItem> Items { get; set; } = new List<PrescriptionItem>();
-
-
-
-
-
+    public ICollection<PrescriptionItem> Items { get; set; } = [];
   }
 }

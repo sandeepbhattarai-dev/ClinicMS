@@ -11,10 +11,8 @@ namespace ClinicMS.Domain.Entities
         public string? Id { get; set; }
 
         [Required]
-        [Length(3, 100, ErrorMessage ="{0} must be between {2} and {1} characters.")]
         public string Name { get; set; } = string.Empty;
 
-        [MaxLength(500, ErrorMessage = "{0} cannot exceed {1} characters.")]
         public string? Description { get; set; }
 
         [Required]

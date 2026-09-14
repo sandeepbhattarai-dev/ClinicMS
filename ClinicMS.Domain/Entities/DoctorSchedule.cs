@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ClinicMS.Domain.Entities
 {
-    public class DoctorSchedule
-    {
+  public class DoctorSchedule
+  {
     [Key]
     [Required]
-        public string? Id { get; set; }
+    public string? Id { get; set; }
     [Required]
-        public string? DoctorId { get; set; }
-        public DayOfWeek DayOfWeek { get; set; }
-        public TimeSpan StartTime { get; set; }
-        public TimeSpan EndTime { get; set; }
-        public int  SlotDurationMinutes { get; set; } = 10;
-        public bool IsActive { get; set; }
-    }
+    public string? DoctorId { get; set; }
+    public DayOfWeek DayOfWeek { get; set; }
+    public TimeSpan StartTime { get; set; }
+    public TimeSpan EndTime { get; set; }
+    public int SlotDurationMinutes { get; set; } = 10;
+    public bool IsActive { get; set; }
+  }
 }

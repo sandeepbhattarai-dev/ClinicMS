@@ -5,8 +5,8 @@ namespace ClinicMS.Domain.Entities
 {
     public class Invoice
     {
-    [Required]
-        public string? Id { get; set; }
+      [Required]
+      public string? Id { get; set; }
         public string InvoiceNumber { get; set; } = string.Empty;
         public string? PatientId { get; set; }
         public string? AppointmentId { get; set; }

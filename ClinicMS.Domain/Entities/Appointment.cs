@@ -12,16 +12,16 @@ namespace ClinicMS.Domain.Entities
     public string AppointmentNumber { get; set; } = string.Empty;
 
     [Required]
-    [StringLength(100, MinimumLength = 3, ErrorMessage = "{0} must be between {1} and {2} characters.")]
     public string DoctorId { get; set; } = string.Empty;
+    public Doctor Doctor { get; set; } = null!;
 
     [Required]
-    [StringLength(100, MinimumLength = 3, ErrorMessage = "{0} must be between {1} and {2} characters.")]
     public string PatientId { get; set; } = string.Empty;
+    public Patient Patient { get; set; } = null!;
 
     [Required]
-    [StringLength(100, MinimumLength = 3, ErrorMessage = "{0} must be between {1} and {2} characters.")]
     public string DepartmentId { get; set; } = string.Empty;
+    public Department Department { get; set; } = null!;
 
     [Required]
     public DateTime AppointmentDate { get; set; }
@@ -33,10 +33,8 @@ namespace ClinicMS.Domain.Entities
 
     public AppointmentStatus Status { get; set; }
 
-    [StringLength(500, MinimumLength = 3, ErrorMessage = "{0} must be between {1} and {2} characters.")]
     public string ChiefComplaint { get; set; } = string.Empty;
 
-    [StringLength(500, MinimumLength = 3, ErrorMessage = "{0} must be between {1} and {2} characters.")]
     public string CancelReason { get; set; } = string.Empty;
 
     [Required]
@@ -44,6 +42,5 @@ namespace ClinicMS.Domain.Entities
 
     [Required]
     public string? CreatedById { get; set; }
-
   }
 }
