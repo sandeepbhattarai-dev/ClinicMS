@@ -6,7 +6,7 @@ namespace ClinicMS.Domain.Entities
   public class Patient
   {
     [Required]
-    public string? Id { get; init; }
+    public string Id { get; set; } = string.Empty;
 
     [Required]
     public string PatientNumber { get; set; } = string.Empty;
@@ -29,9 +29,7 @@ namespace ClinicMS.Domain.Entities
     [Required]
     public string Phone { get; set; } = string.Empty;
 
-
-    [EmailAddress]
-    public string Email { get; set; } = string.Empty;
+    public string? Email { get; set; }
 
     [Required]
     public string Address { get; set; } = string.Empty;
@@ -40,9 +38,12 @@ namespace ClinicMS.Domain.Entities
 
     public DateTime CreatedOn { get; set; }
 
-    public DateTime UpdatedOn { get; set; }
-
     public string CreatedById { get; set; } = string.Empty;
+
+
+    public List<Appointment> Appointments { get; set; } = [];
+    public List<Prescription> Prescriptions { get; set; } = [];
+    public List<Invoice> Invoices { get; set; } = [];
 
 
   }

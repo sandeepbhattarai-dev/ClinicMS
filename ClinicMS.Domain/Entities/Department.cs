@@ -8,7 +8,7 @@ namespace ClinicMS.Domain.Entities
     public class Department
     {
         [Key]
-        public string? Id { get; set; }
+        public string Id { get; set; } = string.Empty;
 
         [Required]
         public string Name { get; set; } = string.Empty;
@@ -17,6 +17,8 @@ namespace ClinicMS.Domain.Entities
 
         [Required]
         public bool IsActive { get; set; } = true;
-    }
+
+        public List<Doctor> Doctors { get; set; } = [];
+  }
 }
 // completed - v1.0.0

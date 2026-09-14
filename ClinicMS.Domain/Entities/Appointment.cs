@@ -6,7 +6,7 @@ namespace ClinicMS.Domain.Entities
   public class Appointment
   {
     [Required]
-    public string? Id { get; set; }
+    public string Id { get; set; } = string.Empty;
 
     [Required]
     public string AppointmentNumber { get; set; } = string.Empty;
@@ -31,7 +31,7 @@ namespace ClinicMS.Domain.Entities
     public TimeSpan EndTime { get; set; }
 
 
-    public AppointmentStatus Status { get; set; }
+    public AppointmentStatus Status { get; set; } = AppointmentStatus.Scheduled;
 
     public string ChiefComplaint { get; set; } = string.Empty;
 
@@ -41,6 +41,13 @@ namespace ClinicMS.Domain.Entities
     public DateTime CreatedOn { get; set; }
 
     [Required]
-    public string? CreatedById { get; set; }
+    public string CreatedById { get; set; } = string.Empty;
+
+
+
+    // nav
+    public MedicalRecord? MedicalRecord { get; set; }
+    public Prescription? Prescription { get; set; }
+    public Invoice? Invoice { get; set; }
   }
 }

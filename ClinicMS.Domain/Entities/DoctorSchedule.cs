@@ -6,13 +6,16 @@ namespace ClinicMS.Domain.Entities
   {
     [Key]
     [Required]
-    public string? Id { get; set; }
+    public string Id { get; set; } = string.Empty;
     [Required]
-    public string? DoctorId { get; set; }
+    public string DoctorId { get; set; } = string.Empty;
     public DayOfWeek DayOfWeek { get; set; }
     public TimeSpan StartTime { get; set; }
     public TimeSpan EndTime { get; set; }
     public int SlotDurationMinutes { get; set; } = 10;
-    public bool IsActive { get; set; }
+    public bool IsActive { get; set; } = true;
+
+
+    public Doctor Doctor { get; set; } = null!;
   }
 }
