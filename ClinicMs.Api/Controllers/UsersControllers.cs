@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ClinicMs.Api.v1.Controllers
+namespace ClinicMs.Api.Controllers
 {
   [Route("api/v1/[Controller]")]
   [ApiController]
