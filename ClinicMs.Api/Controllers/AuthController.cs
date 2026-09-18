@@ -1,7 +1,9 @@
 ﻿using ClinicMs.Shared.Models;
 using ClinicMS.Application.DTOs.Auth;
 using ClinicMS.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ClinicMS.Api.Controllers
 {
@@ -26,8 +28,29 @@ namespace ClinicMS.Api.Controllers
 
       return Ok(
           ApiResponseDto<LoginResponseDto>.Ok(
-              result,
-              "Login successful."));
+            result, "Login successful."));
     }
+
+    [Authorize]
+    [HttpGet("me")]
+    public IActionResult Me()
+    {
+      var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+      var email = User.FindFirstValue(ClaimTypes.Email);
+      var role = User.FindFirstValue(ClaimTypes.Role);
+
+      var data = new
+      {
+        UserId = userId,
+        Email = email,
+        Role = role
+      };
+
+      return Ok(
+          ApiResponseDto<object>.Ok(
+              data,
+              "Authenticated user retrieved successfully."));
+    }
+
   }
 }

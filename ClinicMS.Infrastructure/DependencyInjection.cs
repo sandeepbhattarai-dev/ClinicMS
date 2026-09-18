@@ -63,7 +63,8 @@ namespace ClinicMS.Infrastructure
           ValidAudience = config["Jwt:Audience"],
 
           IssuerSigningKey = new SymmetricSecurityKey(
-                      Encoding.UTF8.GetBytes(config["Jwt:Key"]!))
+                Encoding.UTF8.GetBytes(
+                    config["Jwt:Key"]!))
         };
       });
 
