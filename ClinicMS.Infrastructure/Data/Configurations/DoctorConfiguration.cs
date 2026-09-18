@@ -9,12 +9,13 @@ namespace ClinicMS.Infrastructure.Data.Configurations
     public void Configure(EntityTypeBuilder<Doctor> builder)
     {
       builder.HasKey(x => x.Id);
+
       builder.HasOne(x => x.ApplicationUser) // Doctor 1 -- 
               .WithOne()                    // 1 ApplicationUser
               .HasForeignKey<Doctor>(x => x.ApplicationUserId);
 
       builder.HasOne(x => x.Department)
-             .WithMany()
+             .WithMany(x => x.Doctors)
              .HasForeignKey(x => x.DepartmentId)
              .OnDelete(DeleteBehavior.Restrict);
 

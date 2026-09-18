@@ -20,7 +20,7 @@ namespace ClinicMS.Infrastructure
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-      // Service        Interfaces                 services
+      // Service          Interfaces            services
 
       return services;
     }

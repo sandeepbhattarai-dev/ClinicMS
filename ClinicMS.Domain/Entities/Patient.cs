@@ -44,7 +44,5 @@ namespace ClinicMS.Domain.Entities
     public List<Appointment> Appointments { get; set; } = [];
     public List<Prescription> Prescriptions { get; set; } = [];
     public List<Invoice> Invoices { get; set; } = [];
-
-
   }
 }

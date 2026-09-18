@@ -19,6 +19,7 @@ namespace ClinicMS.Domain.Entities
         public bool IsActive { get; set; } = true;
 
         public List<Doctor> Doctors { get; set; } = [];
-  }
+      public List<Appointment> Appointments { get; set; } = [];
+  } 
 }
 // completed - v1.0.0
