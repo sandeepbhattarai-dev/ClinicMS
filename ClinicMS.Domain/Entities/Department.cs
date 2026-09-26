@@ -15,7 +15,6 @@ namespace ClinicMS.Domain.Entities
 
         public string? Description { get; set; }
 
-        [Required]
         public bool IsActive { get; set; } = true;
 
         public List<Doctor> Doctors { get; set; } = [];

@@ -10,18 +10,12 @@ using System.Text;
 
 namespace ClinicMS.Infrastructure.Services
 {
-  public class AuthService : IAuthService
+  public class AuthService(
+      UserManager<ApplicationUser> userManager,
+      IConfiguration configuration) : IAuthService
   {
-    private readonly UserManager<ApplicationUser> _userManager;
-    private readonly IConfiguration _configuration;
-
-    public AuthService(
-        UserManager<ApplicationUser> userManager,
-        IConfiguration configuration)
-    {
-      _userManager = userManager;
-      _configuration = configuration;
-    }
+    private readonly UserManager<ApplicationUser> _userManager = userManager;
+    private readonly IConfiguration _configuration = configuration;
 
     public async Task<LoginResponseDto?> LoginAsync(
         LoginRequestDto request)
@@ -50,15 +44,15 @@ namespace ClinicMS.Infrastructure.Services
       // 4. Create claims
       var claims = new List<Claim>
             {
-                new Claim(
+                new(
                     ClaimTypes.NameIdentifier,
                     user.Id),
 
-                new Claim(
+                new(
                     ClaimTypes.Name,
                     user.UserName ?? string.Empty),
 
-                new Claim(
+                new(
                     ClaimTypes.Email,
                     user.Email ?? string.Empty)
             };
